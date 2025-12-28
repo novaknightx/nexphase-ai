@@ -1,3 +1,4 @@
+div.className = "topic";
 function generateTopics() {
   const syllabusText = document.getElementById("syllabus").value;
 
@@ -27,3 +28,4 @@ function showContent(topic) {
     </div>
   `;
 }
+
