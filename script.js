@@ -1,30 +1,48 @@
-div.className = "topic";
+// STEP 1: Called when user clicks "Generate Topics"
 function generateTopics() {
+  // Read syllabus text
   const syllabusText = document.getElementById("syllabus").value;
 
-  // Mock processing (acts like AI)
-  const topics = syllabusText.split("\n").filter(t => t.trim() !== "");
+  // Split syllabus into lines (acts like syllabus parsing)
+  const topics = syllabusText
+    .split("\n")
+    .map(t => t.trim())
+    .filter(t => t !== "");
 
+  // Get topics container
   const topicsDiv = document.getElementById("topics");
-  topicsDiv.innerHTML = "<h3>Topics</h3>";
+  topicsDiv.innerHTML = "<h2>Learning Topics</h2>";
 
+  // Clear previous content section
+  document.getElementById("content").innerHTML = "";
+
+  // Create a clickable card for each topic
   topics.forEach(topic => {
     const div = document.createElement("div");
     div.className = "topic";
     div.innerText = topic;
-    div.onclick = () => showContent(topic);
+
+    // When topic is clicked → show learning content
+    div.onclick = () => showLearningContent(topic);
+
     topicsDiv.appendChild(div);
   });
 }
 
-function showContent(topic) {
+// STEP 2: Shows learning content for a selected topic
+function showLearningContent(topic) {
   const contentDiv = document.getElementById("content");
 
   contentDiv.innerHTML = `
-    <h3>${topic}</h3>
-    <p>${topic} is explained here in a beginner-friendly way.</p>
+    <h2>${topic}</h2>
+
+    <p>
+      ${topic} is introduced here in a simple and beginner-friendly manner.
+      The learner is guided through the basic ideas before moving to advanced concepts.
+    </p>
+
     <div class="status">
-      Status: Needs Support (Medium Risk)
+      Learning Status: Needs Support (Medium Risk)
     </div>
   `;
 }
