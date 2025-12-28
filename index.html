@@ -6,39 +6,42 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="navbar">
-    <div class="nav-container">
-      <h2>NexPhase AI</h2>
-      <span>Adaptive Learning Platform</span>
-    </div>
-  </header>
 
-  <main class="container">
-    <section class="hero">
-      <h1>Transforming Syllabi into Learning Experiences</h1>
+  <div class="page">
+
+    <header class="header">
+      <h1>NexPhase AI</h1>
+      <p class="subtitle">Adaptive Learning Platform</p>
+    </header>
+
+    <section class="intro">
       <p>
-        NexPhase AI helps learners understand concepts better by converting syllabi
-        into structured learning modules with early feedback.
+        NexPhase AI converts academic syllabi into structured learning topics
+        and provides early feedback to support effective learning.
       </p>
     </section>
 
-    <section class="card">
-      <h3>Paste Your Syllabus</h3>
-      <textarea id="syllabus" placeholder="Enter syllabus topics line by line"></textarea>
-      <button onclick="generateTopics()">Generate Learning Modules</button>
+    <section class="input-section">
+      <h2>Syllabus Input</h2>
+      <textarea id="syllabus" placeholder="Enter syllabus topics (one per line)"></textarea>
+      <button onclick="generateTopics()">Generate Topics</button>
     </section>
 
     <section id="topics" class="topics-section"></section>
-    <section id="content"></section>
-  </main>
 
-  <footer class="footer">
-    <p>© 2025 NexPhase AI • Educational Prototype</p>
-  </footer>
+    <section id="content" class="content-section"></section>
+
+    <footer class="footer">
+      <p>Educational Prototype • NexPhase AI</p>
+    </footer>
+
+  </div>
 
   <script src="script.js"></script>
 </body>
 
+
 </html>
+
 
 
